@@ -37,22 +37,24 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver_nostatic' # new
+    'whitenoise.runserver_nostatic', # new
     'django.contrib.staticfiles',
     'blog', # new 
-    'accounts' # new
+    'accounts', # new
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware' # new 
+    'whitenoise.middleware.WhiteNoiseMiddleware', # new 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new
 
 ROOT_URLCONF = 'blog_project.urls'
 
@@ -122,8 +124,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 #  css join
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # new
 
 STATIC_URL = '/static/'
 
